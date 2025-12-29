@@ -1,10 +1,22 @@
-import java.util.*;
+abstract class Animal {
+    abstract void sound();   // abstract method
+}
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter an integer: ");
-        int n = scanner.nextInt();
-       System.out.println("You entered: " + n);
-        scanner.close();
+
+        Animal a = new Dog();   // 🔥 UPCASTING
+        Animal b = new Cat();   // 🔥 UPCASTING
+        a.sound();              // calls Dog's sound()
+        b.sound();              // calls Cat's sound()
     }
 }
